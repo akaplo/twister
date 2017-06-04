@@ -1,0 +1,15 @@
+%h1 Listing rsvps
+
+%table
+  %tr
+    %th Names
+    %th Attending
+    %th Food Choice
+
+  - @rsvps.each do |rsvp|
+    %tr
+      %td= rsvp.names
+      %td= rsvp.attending
+      %td= rsvp.food_choice
+      %td= link_to 'Show', rsvps_path(rsvp)
+      %td= link_to 'Edit', edit_rsvp_path(rsvp)

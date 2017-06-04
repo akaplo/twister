@@ -1,0 +1,13 @@
+%h1 Your RSVP
+%p
+  = @rsvp.names
+  are
+  attending?
+  = @rsvp.attending
+
+%p
+  Food choice is
+  = @rsvp.food_choice
+
+Wondering who else is coming?
+= link_to 'See all RSVPs.', rsvps_path
