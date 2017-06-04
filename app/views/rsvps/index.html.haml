@@ -11,5 +11,7 @@
       %td= rsvp.names
       %td= rsvp.attending
       %td= rsvp.food_choice
-      %td= link_to 'Show', rsvps_path(rsvp)
+      %td= link_to 'Show', rsvp_path(rsvp)
       %td= link_to 'Edit', edit_rsvp_path(rsvp)
+      %td= link_to 'Delete', rsvp_path(rsvp), method: :delete,
+        data: { confirm: 'Are you sure?' }

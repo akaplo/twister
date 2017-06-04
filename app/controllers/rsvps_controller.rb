@@ -16,7 +16,7 @@ class RsvpsController < ApplicationController
   end
 
   def create
-    @rsvp = Rsvp.new(rsvps_params)
+    @rsvp = Rsvp.new(rsvp_params)
     if @rsvp.save
       redirect_to @rsvp
     else
@@ -34,10 +34,14 @@ class RsvpsController < ApplicationController
     end
   end
 
+  def destroy
+    @rsvp = Rsvp.find(params[:id])
+    @rsvp.destroy
+
+    redirect_to rsvps_path
+  end
+
   private
-    def rsvps_params
-      params.require(:rsvps).permit(:names, :attending, :food_choice)
-    end
     def rsvp_params
       params.require(:rsvp).permit(:names, :attending, :food_choice)
     end
