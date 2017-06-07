@@ -1,0 +1,8 @@
+-if flash[:error]
+  %strong
+    = flash[:error]
+
+= form_tag find_rsvp_rsvps_path do
+  = label_tag(:rsvp, "Search for:")
+  = text_field_tag(:invite_code)
+  = submit_tag("Search")

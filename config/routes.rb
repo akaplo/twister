@@ -1,12 +1,13 @@
 Rails.application.routes.draw do
 
-  resources :home do
+  resources :home
+
+  resources :rsvps do
     collection do
       post 'find_rsvp'
+      get 'find_rsvp'
     end
   end
-
-  resources :rsvps
 
   root 'home#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

@@ -2,13 +2,6 @@
 
 %h2 Here to RSVP?
 
--if flash[:error]
-  %strong
-    = flash[:error]
-
-= form_tag find_rsvp_home_index_path do
-  = label_tag(:rsvp, "Search for:")
-  = text_field_tag(:rsvp)
-  = submit_tag("Search")
+= link_to 'go', controller: 'rsvps', action: 'find_rsvp'
 
 = link_to 'Click here to RSVP!', controller: 'rsvps', action: 'new'

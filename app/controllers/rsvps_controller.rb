@@ -41,6 +41,19 @@ class RsvpsController < ApplicationController
     redirect_to rsvps_path
   end
 
+  def find_rsvp
+    unless params[:invite_code] == nil
+      rsvp = Rsvp.where(invite_code: params[:invite_code]).first
+      if rsvp != nil
+        print rsvp
+        redirect_to rsvp_path(id: rsvp.id)
+      else
+        flash[:error] = 'Invalid invite code'
+        render 'find_rsvp'
+      end
+    end
+  end
+
   private
     def rsvp_params
       params.require(:rsvp).permit(:names, :attending, :food_choice)
