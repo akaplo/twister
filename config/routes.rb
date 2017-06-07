@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
 
-  get 'home/index'
+  resources :home do
+    collection do
+      post 'find_rsvp'
+    end
+  end
 
   resources :rsvps
 

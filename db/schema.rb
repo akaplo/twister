@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170601210313) do
+ActiveRecord::Schema.define(version: 20170604013001) do
 
   create_table "rsvps", force: :cascade do |t|
     t.boolean "attending"
@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 20170601210313) do
     t.text "food_choice"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "invite_code"
   end
 
 end
