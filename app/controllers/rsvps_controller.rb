@@ -30,7 +30,8 @@ class RsvpsController < ApplicationController
     if @rsvp.update(rsvp_params)
       redirect_to @rsvp
     else
-      render 'edit'
+      flash[:error] = @rsvp.errors
+      redirect_to edit_rsvp_url(@rsvp)
     end
   end
 
