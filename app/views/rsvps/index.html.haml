@@ -1,4 +1,6 @@
-%h1 Listing rsvps
+= link_to 'Home', home_index_path
+
+%h1 All rsvps
 
 %table
   %tr
@@ -9,7 +11,7 @@
   - @rsvps.each do |rsvp|
     %tr
       %td= rsvp.names
-      %td= rsvp.attending
+      %td= rsvp.attending ? 'Yes' : 'No'
       %td= rsvp.food_choice
       %td= link_to 'Show', rsvp_path(rsvp)
       %td= link_to 'Edit', edit_rsvp_path(rsvp)

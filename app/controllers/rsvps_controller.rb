@@ -47,7 +47,7 @@ class RsvpsController < ApplicationController
       rsvp = Rsvp.where(invite_code: params[:invite_code]).first
       if rsvp != nil
         print rsvp
-        redirect_to rsvp_path(id: rsvp.id)
+        redirect_to edit_rsvp_path(id: rsvp.id)
       else
         flash[:error] = 'Invalid invite code'
         render 'find_rsvp'

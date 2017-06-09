@@ -33,7 +33,12 @@
   %p
     = f.label :food_choice
     %br
-    = f.text_area :food_choice
+    = f.label :steak
+    = f.radio_button :food_choice, 'Steak'
+    = f.label :chicken
+    = f.radio_button :food_choice, 'Chicken'
+    = f.label :veggie_burger
+    = f.radio_button :food_choice, 'Veggie Burger'
 
   %p
     = f.submit
